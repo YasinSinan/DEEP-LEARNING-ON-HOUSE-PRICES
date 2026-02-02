@@ -1,0 +1,34 @@
+import math
+
+num_epochs = 100
+
+for epoch in range(num_epochs):
+    model.train()
+    train_loss = 0
+
+    for xb, yb in train_loader:
+        optimizer.zero_grad()
+        preds = model(xb)
+        loss = criterion(preds, yb)
+        loss.backward()
+        optimizer.step()
+        train_loss += loss.item()
+
+    train_loss /= len(train_loader)
+
+    model.eval()
+    val_loss = 0
+    with torch.no_grad():
+        for xb, yb in val_loader:
+            preds = model(xb)
+            loss = criterion(preds, yb)
+            val_loss += loss.item()
+
+    val_loss /= len(val_loader)
+
+    if (epoch + 1) % 10 == 0:
+        print(
+            f"Epoch {epoch+1:03d} | "
+            f"Train Loss: {train_loss:.4f} | "
+            f"Val Loss: {val_loss:.4f}"
+        )
