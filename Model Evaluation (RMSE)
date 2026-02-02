@@ -1,0 +1,7 @@
+model.eval()
+with torch.no_grad():
+    val_preds = model(X_val_tensor)
+    mse = criterion(val_preds, y_val_tensor).item()
+    rmse = math.sqrt(mse)
+
+print(f"Validation RMSE: {rmse:.2f}")
