@@ -1,0 +1,12 @@
+1️⃣ Problem Overview
+
+We are solving the House Prices: Advanced Regression Techniques problem from Kaggle.
+
+Goal: Predict house prices using tabular data
+
+Target column: SalePrice
+
+Approach: Multi-Layer Perceptron (MLP) using PyTorch
+
+Evaluation metric: RMSE (Root Mean Squared Error)
+
