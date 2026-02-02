@@ -1,0 +1,7 @@
+If training loss ≪ validation loss → Overfitting
+
+If both losses high → Underfitting
+
+If both decrease and stabilize close together → Good fit
+
+Dropout + BatchNorm help control overfitting in tabular neural networks.
